@@ -1,4 +1,4 @@
-defmodule NlwHeatTags.Message do
+defmodule NlwHeatTags.Messages.Message do
   use Ecto.Schema
 
   import Ecto.Changeset
