@@ -17,6 +17,11 @@ config :nlw_heat_tags, NlwHeatTagsWeb.Endpoint,
   pubsub_server: NlwHeatTags.PubSub,
   live_view: [signing_salt: "1PkiP35k"]
 
+config :nlw_heat_tags, NlwHeatTags.Scheduler,
+  jobs: [
+    {"* * * * * *", {NlwHeatTags.Messages.Tags.Count, :call, []}}
+  ]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails

@@ -5,6 +5,7 @@ defmodule NlwHeatTags.Messages.Tags.Count do
     Get.today_message()
     |> Task.async_stream(&cout_words(&1.message))
     |> Enum.reduce(%{}, fn elem, acc -> sum_values(elem, acc) end)
+    |> IO.inspect()
   end
 
   defp cout_words(message) do

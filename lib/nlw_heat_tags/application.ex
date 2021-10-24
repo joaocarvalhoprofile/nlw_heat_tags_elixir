@@ -15,9 +15,11 @@ defmodule NlwHeatTags.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: NlwHeatTags.PubSub},
       # Start the Endpoint (http/https)
-      NlwHeatTagsWeb.Endpoint
+      NlwHeatTagsWeb.Endpoint,
       # Start a worker by calling: NlwHeatTags.Worker.start_link(arg)
       # {NlwHeatTags.Worker, arg}
+      # TODO my scheduler
+      NlwHeatTags.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
