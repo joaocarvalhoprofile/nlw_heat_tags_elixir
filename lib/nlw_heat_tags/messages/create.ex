@@ -10,8 +10,5 @@ defmodule NlwHeatTags.Messages.Create do
   end
 
   defp handle_insert({:ok, %Message{}} = result), do: result
-
-  defp handle_insert({:error, result}) do
-    %{result: result, status: :bad_request}
-  end
+  defp handle_insert({:error, result}), do: {:error, %{result: result, status: :bad_request}}
 end
