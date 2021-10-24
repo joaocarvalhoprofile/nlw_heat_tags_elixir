@@ -19,6 +19,7 @@ defmodule NlwHeatTags.Message do
     %__MODULE__{}
     |> cast(params, @required_params)
     |> validate_required(@required_params)
+    |> validate_length(:message, min: 1, max: 140)
     |> validate_format(:email, ~r/@/)
   end
 end
